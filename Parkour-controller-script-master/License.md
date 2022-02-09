@@ -1,0 +1,1 @@
+Do whatever you want with this code, but you have to mention me in the creation you use this code for.
