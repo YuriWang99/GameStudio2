@@ -6,9 +6,9 @@ public class PlayerController : GravityObject {
 
 	// Exposed variables
 	[Header ("Movement settings")]
-	public float walkSpeed = 8;
-	public float runSpeed = 14;
-	public float jumpForce = 20;
+	public float walkSpeed = 13;
+	public float runSpeed = 20;
+	public float jumpForce = 40;
 	public float vSmoothTime = 0.1f;
 	public float airSmoothTime = 0.5f;
 	public float stickToGroundForce = 8;
