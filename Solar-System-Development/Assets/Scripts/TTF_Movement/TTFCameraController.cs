@@ -7,18 +7,34 @@ public class TTFCameraController : MonoBehaviour
 
     public Camera mainCamera;
     public Camera weaponCamera;
-    float sensX = 1f;
-    float sensY = 1f;
-    float baseFov = 90f;
-    float maxFov = 140f;
-    float wallRunTilt = 15f;
+    public float sensX = 1f;
+    public float sensY = 1f;
+    public float baseFov = 90f;
+    public float maxFov = 140f;
+    public float wallRunTilt = 15f;
 
-    float wishTilt = 0;
-    float curTilt = 0;
-    Vector2 currentLook;
-    Vector2 sway = Vector3.zero;
-    float fov;
-    Rigidbody rb;
+    public float wishTilt = 0;
+    public float curTilt = 0;
+    public Vector2 currentLook;
+    public Vector2 sway = Vector3.zero;
+    public float fov;
+    public Rigidbody rb;
+
+    //Mouse Control Camera
+    [Header("Mouse settings")]
+    public float mouseSensitivityMultiplier = 1;
+    public float maxMouseSmoothTime = 0.3f;
+    public Vector2 pitchMinMax = new Vector2(-40, 85);
+    public InputSettings inputSettings;
+
+    float yaw;
+    float pitch;
+    float smoothYaw;
+    float smoothPitch;
+
+    float yawSmoothV;
+    float pitchSmoothV;
+    bool debug_playerFrozen;
 
     void Start()
     {
@@ -58,7 +74,7 @@ public class TTFCameraController : MonoBehaviour
 
         transform.localRotation = Quaternion.AngleAxis(-currentLook.y, Vector3.right);
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, curTilt);
-        transform.root.transform.localRotation = Quaternion.Euler(0, currentLook.x, 0);
+        transform.root.transform.localRotation = Quaternion.Euler(transform.root.transform.localRotation.eulerAngles.x, currentLook.x, transform.root.transform.localRotation.eulerAngles.z);
     }
 
     public void Punch(Vector2 dir)

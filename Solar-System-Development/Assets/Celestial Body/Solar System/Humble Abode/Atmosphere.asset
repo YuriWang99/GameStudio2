@@ -27,5 +27,5 @@ MonoBehaviour:
   ditherScale: 3.89
   blueNoise: {fileID: 2800000, guid: 8886a14b14a1b44089f789c0b8c05643, type: 3}
   atmosphereScale: 0.322
-  timeOfDay: 103.2
+  timeOfDay: 96.41
   sunDst: 1000
