@@ -35,7 +35,7 @@ public class PlanetTest : MonoBehaviour {
 			}
 			if (sun) {
 				sun.gameObject.SetActive (true);
-				testLight.gameObject.SetActive (false);
+				//testLight.gameObject.SetActive (false);
 			}
 			bodies = FindObjectsOfType<CelestialBodyGenerator> ();
 		}
@@ -49,8 +49,8 @@ public class PlanetTest : MonoBehaviour {
 		}
 
 		if (!Application.isPlaying) {
-			//sun.transform.position = new Vector3 (Mathf.Cos (timeOfDay), Mathf.Sin (timeOfDay), 0) * 1500;
-			//sun.transform.LookAt (Vector3.zero);
+			sun.transform.position = new Vector3 (Mathf.Cos (timeOfDay), Mathf.Sin (timeOfDay), 0) * 1500;
+			sun.transform.LookAt (Vector3.zero);
 		}
 	}
 

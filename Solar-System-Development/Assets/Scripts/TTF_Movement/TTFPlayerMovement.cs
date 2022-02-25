@@ -146,11 +146,11 @@ public class TTFPlayerMovement : MonoBehaviour
         // Rotate to align with gravity up
         Vector3 gravityUp = -gravityOfNearestBody.normalized;
 
-        //Debug.DrawLine(this.gameObject.transform.position, dir, Color.red, 10f);
-        //Debug.DrawLine(transform.up, rb.position, Color.green, 10f);
+        Debug.DrawLine(this.gameObject.transform.position, dir, Color.red, 10f);
+        Debug.DrawLine(transform.up, rb.position, Color.green, 10f);
         //Debug.Log(dir);
-        //groundNormal = gravityUp;
-        //transform.rotation = Quaternion.FromToRotation(transform.up , gravityUp) * transform.rotation;
+        groundNormal = gravityUp;
+        transform.rotation = Quaternion.FromToRotation(transform.up , gravityUp) * transform.rotation;
         // Move
         //rb.MovePosition(rb.position + Direction() * Time.fixedDeltaTime);
 
